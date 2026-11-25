@@ -1,6 +1,6 @@
 # Phần 1 · Thuật toán Trivium
 
-**Người trình bày · Lê Đức Hoàng** | **Thời lượng · 4 phút**
+**Nhóm 10 · Lê Đức Hoàng · MSSV 20233410** | **Thời lượng · 4 phút**
 
 ## 1. Nguyên lý mã dòng · 45 giây
 
@@ -15,6 +15,18 @@ Trạng thái 288 bit chia thành 3 thanh ghi dịch. Ký hiệu `s[i]` dùng ch
 | A · 93 bit | `s[1]…s[93]` | 80 bit khóa rồi 13 bit 0 |
 | B · 84 bit | `s[94]…s[177]` | 80 bit IV rồi 4 bit 0 |
 | C · 111 bit | `s[178]…s[288]` | 108 bit 0 rồi 3 bit 1 |
+
+```mermaid
+flowchart LR
+    A["A · 93 bit"] -->|"t1 sau hồi tiếp"| B["B · 84 bit"]
+    B -->|"t2 sau hồi tiếp"| C["C · 111 bit"]
+    C -->|"t3 sau hồi tiếp"| A
+    A -->|"s66 XOR s93"| Z["XOR · bit z"]
+    B -->|"s162 XOR s177"| Z
+    C -->|"s243 XOR s288"| Z
+```
+
+Các mũi tên hồi tiếp đi vào đầu thanh ghi đích. Mỗi bit hồi tiếp còn kết hợp một bit lấy ở thanh ghi đích, theo công thức ở mục 3. Các nhánh đi vào khối XOR lấy giá trị trước khi tính hồi tiếp.
 
 Sau khi nạp, cập nhật trạng thái **1.152 nhịp** và bỏ đầu ra. Nhịp **1.153** sinh bit dòng khóa hợp lệ đầu tiên. Trong định dạng byte của vector eSTREAM, bit cao nhất của byte hex cuối của khóa vào `s[1]`, bit thấp nhất của byte đầu vào `s[80]`. IV dùng cùng quy tắc cho `s[94]…s[173]`. Bit dòng khóa đầu tiên vào bit thấp nhất của byte đầu ra đầu tiên.
 
@@ -39,4 +51,4 @@ Dịch các bit bên trong mỗi thanh ghi về phía chỉ số lớn hơn, b�
 
 Với khóa và IV toàn 0, vị trí duy nhất có giá trị 1 lúc nạp là `s[286]`, `s[287]`, `s[288]`. Ở nhịp đầu, trước khi tính hồi tiếp, `t1 = 0`, `t2 = 0`, `t3 = 1`. Sau hồi tiếp, `t3 = 1 XOR (1 AND 1) XOR 0 = 0`. Bit `z = 1` của nhịp này bị bỏ vì vẫn đang khởi tạo. Chuyển sang phần demo để đối chiếu đầu ra sau khi đủ 1.152 nhịp.
 
-**Tài liệu tham khảo** · [De Cannière và Preneel, Trivium Specifications](https://web.archive.org/web/20161020205326/http://www.ecrypt.eu.org/stream/ciphers/trivium/trivium.pdf) · [Mô tả thuật toán và quy ước thứ tự bit](https://algorithm.tamnd.com/trivium/)
+**Tài liệu tham khảo** · [De Cannière và Preneel, Trivium Specifications](https://cr.yp.to/streamciphers/trivium/desc.pdf) · [Mô tả thuật toán và quy ước thứ tự bit](https://algorithm.tamnd.com/trivium/)

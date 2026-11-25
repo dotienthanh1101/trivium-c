@@ -1,6 +1,6 @@
 # Phần 2 · Cài đặt và kiểm định
 
-**Người trình bày · Đỗ Tiến Thành** | **Thời lượng · 4 phút**
+**Nhóm 10 · Đỗ Tiến Thành · MSSV 20224150** | **Thời lượng · 4 phút**
 
 ## 1. Tổ chức chương trình C · 1 phút
 
@@ -18,11 +18,11 @@ Bảng dùng **16 byte đầu** của mỗi vector. Bản rõ chung dài 16 byte
 | Set 2 #0 | `00000000000000000000` | `00000000000000000000` | `FBE0BF265859051B517A2E4E239FC97F` | `FBE0BF265859051B517A2E4E239FC97F` | PASS |
 | Set 6 #0 | `0053A6F94C9FF24598EB` | `0D74DB42A91077DE45AC` | `F4CD954A717F26A7D6930830C4E7CF08` | `F4CD954A717F26A7D6930830C4E7CF08` | PASS |
 
-Chạy `./trivium` hoặc `.\trivium.exe` và chỉ ra hai dòng `EXPECT` và `OUTPUT`. Set 2 dùng khóa và IV toàn 0 làm mốc. Set 1 đổi một bit khóa. Set 6 có cả khóa lẫn IV khác 0 để kiểm tra thứ tự nạp bit của cả hai đầu vào. [Nguồn giá trị tham chiếu](https://algorithm.tamnd.com/trivium/#implementations) · [Log chạy thực tế](../tests/ket-qua.txt)
+Chạy `./trivium` hoặc `.\trivium.exe` và chỉ ra hai dòng `EXPECT` và `OUTPUT`. Set 2 dùng khóa và IV toàn 0 làm mốc. Set 1 đổi một bit khóa. Set 6 có cả khóa lẫn IV khác 0 để kiểm tra thứ tự nạp bit của cả hai đầu vào. [Bản lưu vector eSTREAM](https://github.com/bmkessler/trivium/blob/master/trivium-80.80.test-vectors) · [Log chạy thực tế](../tests/ket-qua.txt)
 
 ## 3. Demo mã hóa và giải mã · 1 phút
 
-Dùng khóa và IV của Set 6 rồi chạy hai lệnh trong [README](../README.md#biên-dịch-và-chạy).
+Dùng khóa và IV của Set 6 rồi chạy hai lệnh trong [README](../README.md#4-biên-dịch-và-chạy).
 
 | Bước | Dữ liệu vào | Dữ liệu ra |
 |---|---|---|
