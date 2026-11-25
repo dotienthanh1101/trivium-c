@@ -9,10 +9,10 @@
 | 1 | **Đỗ Tiến Thành** | 20224150 | 11/01/2004 |
 | 2 | **Lê Đức Hoàng** | 20233410 | 20/09/2005 |
 
-| Thứ tự | Thành viên | Nội dung phụ trách | Minh họa | Thời lượng |
-|:---:|---|---|---|:---:|
-| 1 | **Lê Đức Hoàng** | [Đặc tả Trivium](docs/01-thuat-toan.md), nạp khóa và IV, khởi tạo, cập nhật thanh ghi và sinh dòng khóa trong [mã C](trivium.c) | Tính nhịp đầu tiên với khóa và IV toàn 0 | 4 phút |
-| 2 | **Đỗ Tiến Thành** | [Cài đặt và kiểm định](docs/02-cai-dat-va-kiem-dinh.md), xử lý dữ liệu hex, mã hóa và giải mã, đối chiếu vector eSTREAM và ghi [log thực nghiệm](tests/ket-qua.txt) | Chạy các vector và mã hóa, giải mã chuỗi `TRIVIUM` | 4 phút |
+| Thứ tự | Thành viên | Nội dung phụ trách | Minh họa |
+|:---:|---|---|---|
+| 1 | **Lê Đức Hoàng** | [Đặc tả Trivium](docs/01-thuat-toan.md), nạp khóa và IV, khởi tạo, cập nhật thanh ghi và sinh dòng khóa trong [mã C](trivium.c) | Tính nhịp đầu tiên với khóa và IV toàn 0 |
+| 2 | **Đỗ Tiến Thành** | [Cài đặt và kiểm định](docs/02-cai-dat-va-kiem-dinh.md), xử lý dữ liệu hex, mã hóa và giải mã, đối chiếu vector eSTREAM và ghi [log thực nghiệm](tests/ket-qua.txt) | Chạy các vector và mã hóa, giải mã chuỗi `TRIVIUM` |
 
 ## 2. Tóm tắt thuật toán
 
